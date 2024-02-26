@@ -42,7 +42,7 @@ public class Pecs{
 	public void testCovariance(List<? extends B> elements){
 		B b = new B();
 		C c = new C();
-		A a = elements.get(0); // PASS: We know th return type, certainly a subtype of B
+		A a = elements.get(0); // PASS: We know th return type, necessarily a subtype of B
 		
 		elements.add(b); // Exception : ambiguous type given to the structure, include b
 		elements.add(c); // Exception
@@ -52,7 +52,7 @@ public class Pecs{
 	public void testContraVariance(List<? super B> elements){
 		B b = new B();
 		C c = new C();
-		elements.add(b); // PASS : We know the super of the element's type given to structure, certainly B at least
+		elements.add(b); // PASS : We know the super of the element's type given to structure, necessarily B at least
 		elements.add(c); // PASS
 		
 		A a = elements.get(0); // Exception : ambiguous type out of structure
